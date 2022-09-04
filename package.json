@@ -9,7 +9,11 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "fs": "^0.0.1-security",
+    "gray-matter": "^4.0.3",
     "next": "12.2.5",
+    "node-fetch": "^3.2.10",
+    "path": "^0.12.7",
     "react": "18.2.0",
     "react-dom": "18.2.0"
   },

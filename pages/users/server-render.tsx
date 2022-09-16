@@ -4,16 +4,22 @@ import fetch from 'node-fetch';
 import { useRouter } from "next/router"
 import React from "react"
 import { API_BASE_URL } from "../../constants"
-import { GetStaticProps, GetStaticPaths, GetServerSideProps } from 'next';
+import { GetServerSideProps, InferGetServerSidePropsType } from 'next';
 // import useSWR from 'swr';
 
-const USER_LIST = [{name:"Hai"}]
-export const getServerSideProps: GetServerSideProps = async (context) => {
+type User = {
+  name: string;
+}
+const USER_LIST: User[] = [{name:"Hai"}]
+
+export const getServerSideProps: GetServerSideProps<{
+  users: User[],
+}> = async (context) => {
   const {query, params, req, res, locale, locales, defaultLocale} = context;
-  console.log("🚀 ~ query", query)
-  console.log("🚀 ~ params", params)
-  console.log("🚀 ~ req", req)
-  console.log("🚀 ~ locale, locales, defaultLocale", locale, locales, defaultLocale)
+  // console.log("🚀 ~ query", query)
+  // console.log("🚀 ~ params", params)
+  // console.log("🚀 ~ req", req)
+  // console.log("🚀 ~ locale, locales, defaultLocale", locale, locales, defaultLocale)
   if (query?.a == '2') {
     throw new Error(`123`)
   }
@@ -51,7 +57,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
   }
 }
 
-function ServerRender({ users = [] as typeof USER_LIST }) {
+function ServerRender({ users }: InferGetServerSidePropsType<typeof getServerSideProps>) {
   const router = useRouter();
   return (
     <React.Fragment>

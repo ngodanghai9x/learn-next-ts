@@ -38,7 +38,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
 // This function gets called at build time
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-  console.log("🚀 ~ file: [userId].tsx ~ line 36 ~ getStaticProps ~ params", params)
+  console.log("🚀 ~ params", params)
   // const { data, error } = useSWR('/api/users', fetch);
   // Call an external API endpoint to get users
   const res = await fetch(`${API_BASE_URL}/users/`).catch(console.warn)
@@ -68,3 +68,34 @@ function User({ users = USER_LIST }) {
 }
 
 export default User
+
+// type GetStaticPropsContext<
+//   Q extends ParsedUrlQuery = ParsedUrlQuery,
+//   D extends PreviewData = PreviewData
+// > = {
+//   params?: Q
+//   preview?: boolean
+//   previewData?: D
+//   locale?: string
+//   locales?: string[]
+//   defaultLocale?: string
+// }
+
+// type GetServerSidePropsContext<
+//   Q extends ParsedUrlQuery = ParsedUrlQuery,
+//   D extends PreviewData = PreviewData
+// > = {
+//   req: IncomingMessage & {
+//     cookies: NextApiRequestCookies
+//   }
+//   res: ServerResponse
+//   query: ParsedUrlQuery
+//   resolvedUrl: string
+  
+//   params?: Q
+//   preview?: boolean
+//   previewData?: D
+//   locale?: string
+//   locales?: string[]
+//   defaultLocale?: string
+// }

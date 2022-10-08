@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import styles from './sidebar.module.css'
+import styles from './Sidebar.module.css'
 
 function Sidebar(): React.ReactElement {
   return (

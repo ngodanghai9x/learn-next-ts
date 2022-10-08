@@ -1,7 +1,7 @@
 import type { ReactElement } from 'react'
 import React from 'react'
-import Layout from '../../components/layout'
-import Sidebar from '../../components/sidebar'
+import Layout from '../../components/Layout/Layout'
+import Sidebar from '../../components/Layout/Sidebar'
 import type { NextPageWithLayout } from '../_app'
 
 const Page: NextPageWithLayout = () => {

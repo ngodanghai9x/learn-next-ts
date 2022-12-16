@@ -1,6 +1,6 @@
 import Head from 'next/head';
 import React, { ReactElement, ReactNode } from 'react';
-import styles from './layout.module.css';
+import styles from './Layout.module.css';
 
 // const Layout: React.FC = function ({ children }) {
 function Layout({ children }: { children: ReactNode }): ReactElement {

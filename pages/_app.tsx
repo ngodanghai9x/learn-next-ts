@@ -21,7 +21,16 @@ export default function MyApp({ Component, pageProps }: AppPropsWithLayout) {
 
   return getLayout(
     <React.Fragment>
-      <p style={{color: variables.secondaryColor, height: 100, width: 100, background: variables.primaryColor}}>Color</p>
+      <p
+        style={{
+          color: variables.secondaryColor,
+          height: 20,
+          width: 50,
+          background: variables.primaryColor,
+        }}
+      >
+        Color
+      </p>
       <Component {...pageProps} />
     </React.Fragment>
   )
